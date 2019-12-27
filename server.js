@@ -33,11 +33,19 @@ app.get('/', (req, res) => {
     res.json({"message": "Welcome to Channel."});
 });
 // Require Posts routes
-require('./app/routes/post_routes.js')(app);
+//require('./app/routes/post_routes.js')(app);
+app.use('/user/:userId', require('./app/routes/post_routes.js'))
+
 //Require User Routes
-require('./app/routes/user_routes.js')(app);
+//require('./app/routes/user_routes.js')(app);
+app.use('/user', require('./app/routes/user_routes.js'))
+
+
 //Require Comment Routes
-require('./app/routes/comment_routes.js')(app);
+// require('./app/routes/comment_routes.js')(app);
+app.use('/user/:userId/post/:postId', require('./app/routes/comment_routes.js'))
+
+app.use('/post/:postId', require('./app/routes/comment_routes.js'))
 
 // listen for requests
 app.listen(3000, () => {

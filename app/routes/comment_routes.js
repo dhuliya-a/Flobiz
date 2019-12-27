@@ -1,18 +1,34 @@
-module.exports = (app) => {
-    const comments = require('../controllers/comment_controller.js');
+const express = require('express');
 
-    // Create a new comment
-    app.post('/comments', comments.create);
+var router = express.Router();
 
-    // Retrieve all comments
-    app.get('/comments', comments.findAll);
+const comments = require('../controllers/comment_controller.js');
 
-    // Retrieve a single comment with commentId
-    app.get('/comments/:commentId', comments.findOne);
+router.post('/comments', comments.create)
+router.get('/comments', comments.findAll)
+router.get('/comments/:commentId', comments.findOne)
+router.put('/comments/:commentId', comments.update)
+router.delete('/comments/:commentId', comments.delete);
 
-    // Update a comment with commentId
-    app.put('/comments/:commentId', comments.update);
+module.exports = router
 
-    // Delete a comment with commentId
-    app.delete('/comments/:commentId', comments.delete);
-}
+
+
+// module.exports = (app) => {
+//     const comments = require('../controllers/comment_controller.js');
+
+//     // Create a new comment
+//     app.post('/comments', comments.create);
+
+//     // Retrieve all comments
+//     app.get('/comments', comments.findAll);
+
+//     // Retrieve a single comment with commentId
+//     app.get('/comments/:commentId', comments.findOne);
+
+//     // Update a comment with commentId
+//     app.put('/comments/:commentId', comments.update);
+
+//     // Delete a comment with commentId
+//     app.delete('/comments/:commentId', comments.delete);
+// }
