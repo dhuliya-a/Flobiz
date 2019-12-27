@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-// var Schema    = mongoose.Schema;
-// var PostModel = require('post');
+//var PostModel = require('post');
 
 const UserSchema = mongoose.Schema({
     email: String,

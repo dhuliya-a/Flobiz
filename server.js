@@ -36,6 +36,8 @@ app.get('/', (req, res) => {
 require('./app/routes/post_routes.js')(app);
 //Require User Routes
 require('./app/routes/user_routes.js')(app);
+//Require Comment Routes
+require('./app/routes/comment_routes.js')(app);
 
 // listen for requests
 app.listen(3000, () => {
