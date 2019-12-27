@@ -40,7 +40,7 @@ exports.findAll = (req, res) => {
 };
 // Find a single comment with a commentId
 exports.findOne = (req, res) => {
-    Comment.findById((mongoose.Types.ObjectId(req.params.commentId)))
+    Comment.findById(({"_id":mongoose.Types.ObjectId(req.params.commentId)}))
     .then(comment => {
         if(!comment) {
             return res.status(404).send({
@@ -69,7 +69,7 @@ exports.update = (req, res) => {
     }
 
     // Find comment and update it with the request body
-    Comment.findByIdAndUpdate((mongoose.Types.ObjectId(req.params.commentId)), {
+    Comment.findByIdAndUpdate(({"_id":mongoose.Types.ObjectId(req.params.commentId)}), {
         post_id: req.params.postId,//id of the post the comment belongs to
         commented_by:req.params.userId,//id of the poster
         comment: req.body.comment
@@ -96,7 +96,7 @@ exports.update = (req, res) => {
 
 // Delete a comment with the specified commentId in the request
 exports.delete = (req, res) => {
-    Comment.findByIdAndRemove((mongoose.Types.ObjectId(req.params.commentId)))
+    Comment.findByIdAndRemove(({"_id":mongoose.Types.ObjectId(req.params.commentId)}))
     .then(comment => {
         if(!comment) {
             return res.status(404).send({

@@ -44,7 +44,7 @@ exports.findAll = (req, res) => {
 };
 // Find a single post with a postId
 exports.findOne = (req, res) => {
-    Post.findById((mongoose.Types.ObjectId(req.params.postId)))
+    Post.findById(({"_id":mongoose.Types.ObjectId(req.params.postId)}))
     .then(post => {
         if(!post) {
             return res.status(404).send({
@@ -73,7 +73,7 @@ exports.update = (req, res) => {
     }
 
     // Find post and update it with the request body
-    Post.findByIdAndUpdate((mongoose.Types.ObjectId(req.params.postId)), {
+    Post.findByIdAndUpdate(({"_id":mongoose.Types.ObjectId(req.params.postId)}), {
         title: req.body.title || "Untitled post",
         description: req.body.description,
         content: req.body.content,
@@ -103,7 +103,7 @@ exports.update = (req, res) => {
 
 // Delete a post with the specified postId in the request
 exports.delete = (req, res) => {
-    Post.findByIdAndRemove((mongoose.Types.ObjectId(req.params.postId)))
+    Post.findByIdAndRemove(({"_id":mongoose.Types.ObjectId(req.params.postId)}))
     .then(post => {
         if(!post) {
             return res.status(404).send({

@@ -44,7 +44,7 @@ exports.findAll = (req, res) => {
 };
 // Find a single user with a userId
 exports.findOne = (req, res) => {
-    User.findById((mongoose.Types.ObjectId(req.params.userId)))
+    User.findById(({"_id":mongoose.Types.ObjectId(req.params.userId)}))
     .then(user => {
         if(!user) {
             return res.status(404).send({
@@ -73,7 +73,7 @@ exports.update = (req, res) => {
     }
 
     // Find user and update it with the request body
-    User.findByIdAndUpdate((mongoose.Types.ObjectId(req.params.userId)), {
+    User.findByIdAndUpdate(({"_id":mongoose.Types.ObjectId(req.params.userId)}), {
         email: req.body.email,
         password: req.body.password,
         bio: req.body.bio,
@@ -104,7 +104,7 @@ exports.update = (req, res) => {
 
 // Delete a user with the specified userId in the request
 exports.delete = (req, res) => {
-    User.findByIdAndRemove((mongoose.Types.ObjectId(req.params.userId)))
+    User.findByIdAndRemove(({"_id":mongoose.Types.ObjectId(req.params.userId)}))
     .then(user => {
         if(!user) {
             return res.status(404).send({
