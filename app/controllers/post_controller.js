@@ -1,6 +1,5 @@
 const Post = require('../models/post.js');
 const mongoose = require('mongoose');
-
 // Create and Save a new post
 exports.create = (req, res) => {
     //Validate request
@@ -17,7 +16,7 @@ exports.create = (req, res) => {
         content: req.body.content,
         likes: req.body.likes,
         image_url: req.body.image_url,
-        author: mongoose.Types.ObjectId(req.params.userId)
+        author: req.params.userId
 
     });
 
@@ -45,7 +44,7 @@ exports.findAll = (req, res) => {
 };
 // Find a single post with a postId
 exports.findOne = (req, res) => {
-    Post.findById(req.params.postId)
+    Post.findById((mongoose.Types.ObjectId(req.params.postId)))
     .then(post => {
         if(!post) {
             return res.status(404).send({
@@ -74,13 +73,13 @@ exports.update = (req, res) => {
     }
 
     // Find post and update it with the request body
-    Post.findByIdAndUpdate(req.params.postId, {
+    Post.findByIdAndUpdate((mongoose.Types.ObjectId(req.params.postId)), {
         title: req.body.title || "Untitled post",
         description: req.body.description,
         content: req.body.content,
         likes: req.body.likes,
         image_url: req.body.image_url,
-        author: mongoose.Types.ObjectId(req.params.userId)
+        author: req.params.userId
 
     }, {new: true})
     .then(post => {
@@ -104,7 +103,7 @@ exports.update = (req, res) => {
 
 // Delete a post with the specified postId in the request
 exports.delete = (req, res) => {
-    Post.findByIdAndRemove(req.params.postId)
+    Post.findByIdAndRemove((mongoose.Types.ObjectId(req.params.postId)))
     .then(post => {
         if(!post) {
             return res.status(404).send({

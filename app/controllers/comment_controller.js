@@ -11,8 +11,8 @@ exports.create = (req, res) => {
 
     // Create a comment
     const comment = new Comment({
-        post_id: mongoose.Types.ObjectId(req.params.postId),//id of the post the comment belongs to
-        commented_by:mongoose.Types.ObjectId(req.params.userId),//id of the poster
+        post_id: req.params.postId,//id of the post the comment belongs to
+        commented_by:req.params.userId,//id of the poster
         comment: req.body.comment
     });
 
@@ -40,7 +40,7 @@ exports.findAll = (req, res) => {
 };
 // Find a single comment with a commentId
 exports.findOne = (req, res) => {
-    Comment.findById(req.params.commentId)
+    Comment.findById((mongoose.Types.ObjectId(req.params.commentId)))
     .then(comment => {
         if(!comment) {
             return res.status(404).send({
@@ -69,9 +69,9 @@ exports.update = (req, res) => {
     }
 
     // Find comment and update it with the request body
-    Comment.findByIdAndUpdate(req.params.commentId, {
-        post_id: mongoose.Types.ObjectId(req.params.postId),//id of the post the comment belongs to
-        commented_by:mongoose.Types.ObjectId(req.params.userId),//id of the poster
+    Comment.findByIdAndUpdate((mongoose.Types.ObjectId(req.params.commentId)), {
+        post_id: req.params.postId,//id of the post the comment belongs to
+        commented_by:req.params.userId,//id of the poster
         comment: req.body.comment
     
     }, {new: true})
@@ -96,7 +96,7 @@ exports.update = (req, res) => {
 
 // Delete a comment with the specified commentId in the request
 exports.delete = (req, res) => {
-    Comment.findByIdAndRemove(req.params.commentId)
+    Comment.findByIdAndRemove((mongoose.Types.ObjectId(req.params.commentId)))
     .then(comment => {
         if(!comment) {
             return res.status(404).send({
