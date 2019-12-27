@@ -45,6 +45,8 @@ app.use('/user', require('./app/routes/user_routes.js'))
 // require('./app/routes/comment_routes.js')(app);
 app.use('/user/:userId/post/:postId', require('./app/routes/comment_routes.js'))
 
+
+//for the feed. all the posts and their comments.
 app.use('/post/:postId', require('./app/routes/comment_routes.js'))
 
 // listen for requests

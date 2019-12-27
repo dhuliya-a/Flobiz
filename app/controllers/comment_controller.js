@@ -11,8 +11,8 @@ exports.create = (req, res) => {
 
     // Create a comment
     const comment = new Comment({
-        post_id: req.body.post_id,//id of the post the comment belongs to
-        commented_by:req.body.commented_by,//id of the poster
+        post_id: req.params.postId,//id of the post the comment belongs to
+        commented_by:req.params.userId,//id of the poster
         comment: req.body.comment
     });
 
@@ -70,13 +70,10 @@ exports.update = (req, res) => {
 
     // Find comment and update it with the request body
     Comment.findByIdAndUpdate(req.params.commentId, {
-        title: req.body.title || "Untitled comment",
-        description: req.body.description,
-        content: req.body.content,
-        likes: req.body.likes,
-        image_url: req.body.image_url,
-        author: req.body.author
-
+        post_id: req.params.postId,//id of the post the comment belongs to
+        commented_by:req.params.userId,//id of the poster
+        comment: req.body.comment
+    
     }, {new: true})
     .then(comment => {
         if(!comment) {

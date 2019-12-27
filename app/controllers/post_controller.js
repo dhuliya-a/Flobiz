@@ -16,7 +16,7 @@ exports.create = (req, res) => {
         content: req.body.content,
         likes: req.body.likes,
         image_url: req.body.image_url,
-        author: req.body.author
+        author: req.params.userId
 
     });
 
@@ -79,7 +79,7 @@ exports.update = (req, res) => {
         content: req.body.content,
         likes: req.body.likes,
         image_url: req.body.image_url,
-        author: req.body.author
+        author: req.params.userId
 
     }, {new: true})
     .then(post => {
