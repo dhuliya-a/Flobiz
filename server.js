@@ -32,8 +32,10 @@ mongoose.connect(dbConfig.url, {
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to Channel."});
 });
-// Require Notes routes
+// Require Posts routes
 require('./app/routes/post_routes.js')(app);
+//Require User Routes
+require('./app/routes/user_routes.js')(app);
 
 // listen for requests
 app.listen(3000, () => {

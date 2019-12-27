@@ -2,7 +2,7 @@ const Post = require('../models/post.js');
 
 // Create and Save a new post
 exports.create = (req, res) => {
-    // Validate request
+    //Validate request
     if(!req.body.content) {
         return res.status(400).send({
             message: "post content can not be empty"
