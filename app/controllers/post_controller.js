@@ -1,4 +1,5 @@
 const Post = require('../models/post.js');
+const mongoose = require('mongoose');
 
 // Create and Save a new post
 exports.create = (req, res) => {
@@ -16,7 +17,7 @@ exports.create = (req, res) => {
         content: req.body.content,
         likes: req.body.likes,
         image_url: req.body.image_url,
-        author: req.params.userId
+        author: mongoose.Types.ObjectId(req.params.userId)
 
     });
 
@@ -79,7 +80,7 @@ exports.update = (req, res) => {
         content: req.body.content,
         likes: req.body.likes,
         image_url: req.body.image_url,
-        author: req.params.userId
+        author: mongoose.Types.ObjectId(req.params.userId)
 
     }, {new: true})
     .then(post => {

@@ -1,5 +1,5 @@
 const User = require('../models/users.js');
-
+const mongoose = require('mongoose');
 // Create and Save a new user
 exports.create = (req, res) => {
     //Validate request
