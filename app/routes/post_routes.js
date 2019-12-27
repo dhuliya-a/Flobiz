@@ -10,6 +10,11 @@ router.get('/posts/:postId', posts.findOne)
 router.put('/posts/:postId', posts.update)
 router.delete('/posts/:postId', posts.delete);
 
+
+router.use('/posts/:postId' , function (req, res, next){ req.postId = req.params.postId;
+    next();
+},require('./comment_routes.js'))
+
 module.exports = router
 
 

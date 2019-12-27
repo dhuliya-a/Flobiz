@@ -5,7 +5,7 @@ var router = express.Router();
 const comments = require('../controllers/comment_controller.js');
 
 router.post('/comments', comments.create)
-router.get('/comments', comments.findAll)
+router.get('/comments', comments.findAll)//make it so that uss user ke comments aayein posts ke
 router.get('/comments/:commentId', comments.findOne)
 router.put('/comments/:commentId', comments.update)
 router.delete('/comments/:commentId', comments.delete);

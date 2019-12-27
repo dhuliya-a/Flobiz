@@ -46,11 +46,12 @@ app.use('/user', require('./app/routes/user_routes.js'))
 
 //Require Comment Routes
 // require('./app/routes/comment_routes.js')(app);
-app.use('/user/:userId/post/:postId', function(req,res,next){
-    req.userId=req.params.userId;
-    req.postId=req.params.postId;
-    next();
-    } ,require('./app/routes/comment_routes.js'))
+
+// app.use('/user/:userId/post/:postId', function(req,res,next){
+//     req.userId=req.params.userId;
+//     req.postId=req.params.postId;
+//     next();
+//     } ,require('./app/routes/comment_routes.js'))
 
 
 //for the feed. all the posts and their comments.

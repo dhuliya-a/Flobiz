@@ -62,7 +62,7 @@ exports.findOne = (req, res) => {
 // Update a comment identified by the commentId in the request
 exports.update = (req, res) => {
     // Validate Request
-    if(!req.body.content) {
+    if(!req.body.comment) {
         return res.status(400).send({
             message: "comment content can not be empty"
         });
