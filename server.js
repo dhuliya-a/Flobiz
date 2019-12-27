@@ -34,7 +34,10 @@ app.get('/', (req, res) => {
 });
 // Require Posts routes
 //require('./app/routes/post_routes.js')(app);
-app.use('/user/:userId', require('./app/routes/post_routes.js'))
+app.use('/user/:userId', function(req,res,next){
+req.userId=req.params.userId;
+next();
+},require('./app/routes/post_routes.js'))
 
 //Require User Routes
 //require('./app/routes/user_routes.js')(app);
@@ -43,11 +46,15 @@ app.use('/user', require('./app/routes/user_routes.js'))
 
 //Require Comment Routes
 // require('./app/routes/comment_routes.js')(app);
-app.use('/user/:userId/post/:postId', require('./app/routes/comment_routes.js'))
+app.use('/user/:userId/post/:postId', function(req,res,next){
+    req.userId=req.params.userId;
+    req.postId=req.params.postId;
+    next();
+    } ,require('./app/routes/comment_routes.js'))
 
 
 //for the feed. all the posts and their comments.
-app.use('/post/:postId', require('./app/routes/comment_routes.js'))
+app.use('/posts/:postId', require('./app/routes/comment_routes.js'))
 
 // listen for requests
 app.listen(3000, () => {

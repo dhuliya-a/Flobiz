@@ -66,7 +66,7 @@ exports.findOne = (req, res) => {
 // Update a user identified by the userId in the request
 exports.update = (req, res) => {
     // Validate Request
-    if(!req.body.content) {
+    if(!req.body.email) {
         return res.status(400).send({
             message: "user content can not be empty"
         });

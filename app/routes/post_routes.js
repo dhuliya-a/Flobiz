@@ -5,7 +5,7 @@ var router = express.Router();
 const posts = require('../controllers/post_controller.js');
 
 router.post('/posts', posts.create)
-router.get('/posts', posts.findAll)
+router.get('/posts', posts.findAll)//update findall to finding posts only of the userid
 router.get('/posts/:postId', posts.findOne)
 router.put('/posts/:postId', posts.update)
 router.delete('/posts/:postId', posts.delete);

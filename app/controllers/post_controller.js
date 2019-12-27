@@ -8,7 +8,7 @@ exports.create = (req, res) => {
             message: "post content can not be empty"
         });
     }
-
+console.log(req.params);
     // Create a post
     const post = new Post({
         title: req.body.title || "Untitled post",
@@ -16,7 +16,7 @@ exports.create = (req, res) => {
         content: req.body.content,
         likes: req.body.likes,
         image_url: req.body.image_url,
-        author: req.params.userId
+        author: req.userId
 
     });
 
@@ -79,7 +79,7 @@ exports.update = (req, res) => {
         content: req.body.content,
         likes: req.body.likes,
         image_url: req.body.image_url,
-        author: req.params.userId
+        author: req.userId
 
     }, {new: true})
     .then(post => {

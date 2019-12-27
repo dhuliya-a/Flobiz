@@ -11,8 +11,8 @@ exports.create = (req, res) => {
 
     // Create a comment
     const comment = new Comment({
-        post_id: req.params.postId,//id of the post the comment belongs to
-        commented_by:req.params.userId,//id of the poster
+        post_id: req.postId,//id of the post the comment belongs to
+        commented_by:req.userId,//id of the poster
         comment: req.body.comment
     });
 
@@ -70,8 +70,8 @@ exports.update = (req, res) => {
 
     // Find comment and update it with the request body
     Comment.findByIdAndUpdate(({"_id":mongoose.Types.ObjectId(req.params.commentId)}), {
-        post_id: req.params.postId,//id of the post the comment belongs to
-        commented_by:req.params.userId,//id of the poster
+        post_id: req.postId,//id of the post the comment belongs to
+        commented_by:req.userId,//id of the poster
         comment: req.body.comment
     
     }, {new: true})
