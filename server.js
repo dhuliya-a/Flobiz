@@ -27,11 +27,12 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to Channel."});
+    res.sendFile('A:/flobiz/index.html');
 });
+
+
 // Require Posts routes
 //require('./app/routes/post_routes.js')(app);
 app.use('/user/:userId', function(req,res,next){

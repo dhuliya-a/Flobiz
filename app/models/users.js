@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 //var PostModel = require('post');
 
 const UserSchema = mongoose.Schema({
-    email: String,
-    password: String,
-    bio: String,
-    gender: String,
-    age: Number,
     first_name: String,
     last_name: String,
+    age: Number,
+    gender: String,
+    email: String,
+    password: String,
+    bio: String
     //posts:[list of all post ids?]
 //posts. all the posts by the user
 }, {
