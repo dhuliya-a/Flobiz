@@ -38,8 +38,8 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@s
   <div style="width:95%;margin-left:30px">
   <ejs-richtexteditor id='defaultRTE'>
   <ng-template #valueTemplate>
-  <p>The RichTextEditor component is WYSIWYG ("what you see is what you get") editor that provides the best user experience to create and update the content.
-  Users can format their content using standard toolbar commands.</p>
+  <p>Write Away. Mentioned below are some features to help you make the best of this editor.</p>
+  <br>
   <p><b>Key features:</b></p>
   <ul><li><p>Provides &lt;IFRAME&gt; and &lt;DIV&gt; modes.</p></li>
   <li><p>Capable of handling markdown editing.</p></li>

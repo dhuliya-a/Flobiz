@@ -2,6 +2,7 @@ const User = require('../models/users.js');
 const mongoose = require('mongoose');
 // Create and Save a new user
 exports.create = (req, res) => {
+    
     //Validate request
     if(!req.body.email) {
         return res.status(400).send({
@@ -14,7 +15,7 @@ exports.create = (req, res) => {
         email: req.body.email,
         password: req.body.password,
         bio: req.body.bio,
-        gender: req.body.gender,
+        gender: req.body.gender||"Unspecified",
         age: req.body.age,
         first_name: req.body.first_name,
         last_name: req.body.last_name
