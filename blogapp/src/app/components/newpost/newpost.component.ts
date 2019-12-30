@@ -21,15 +21,6 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@s
     <input type="text" class="form-control" id="inputfist" placeholder="Add a description of the blog">
   </div>
   <br>
-  <label>Upload Image</label>
-  
-  <div class="custom-file">
-   
-  <input type="file" class="custom-file-input" id="customFile">
-  <label class="custom-file-label" for="customFile">Choose file</label>
-</div>
-<br>
-<br>
   <div class="form-group">
   
   </div>
@@ -38,7 +29,7 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@s
   <div style="width:95%;margin-left:30px">
   <ejs-richtexteditor id='defaultRTE'>
   <ng-template #valueTemplate>
-  <p>Write Away. Mentioned below are some features to help you make the best of this editor.</p>
+  <p>Write Away.</p>
   <br>
   <br>
   <br>

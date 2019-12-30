@@ -13,7 +13,7 @@ import { ThrowStmt } from '@angular/compiler';
 <div class="card bg-dark text-white">
    
 <div class="card-img-overlay">
-<h1 class="display-3 text-white" style="margin-left:90px;margin-top:300px">Registration  {{inputbio}}</h1>
+<h1 class="display-3 text-white" style="margin-left:90px;margin-top:300px">Registration</h1>
 
 
 </div>
