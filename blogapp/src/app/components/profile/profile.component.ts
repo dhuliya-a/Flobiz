@@ -15,10 +15,14 @@ import { Component, OnInit } from '@angular/core';
   
  
   <div  style="margin-right:20px;margin-left:300px">
+  
   <img  src="./assets/images/10.jpg" alt="Card image cap">
+  
+  <button type="button" class="btn btn-outline-dark"  style="width:30%;margin-top:20px;margin-left:130px">Change Photo</button><br><br>
+
 </div>
 
-<div class="bg-transparent" align="center" style="width:500px;height:500px">
+<div class="bg-transparent" align="center" style="width:500px;height:500px;margin-left:-240px">
 <div class="card-body">
 <br><br><br>
 <b>Born</b><br>	James Paul McCartney<br>
@@ -30,9 +34,9 @@ Singer<br>Songwriter<br>Musician<br>Producer<br>Composer<br>Businessman
 
 </div>
 </div>
-
-  </div> 
-
+</div> 
+<app-footer></app-footer>
+  
 
  </div> 
   `,

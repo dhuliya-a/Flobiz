@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
     <div class="card-body">
       <h5 class="card-title" align="center" style="font-weight: bold;">Account Login</h5>
     </div>
-    <input type="text" class="form-control bg-transparent text-dark btn-outline-dark" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" style="width:80%;margin-left:28px;">
+    <input type="text" class="form-control bg-transparent text-dark btn-outline-dark" placeholder="E-mail Address" aria-label="Username" aria-describedby="basic-addon1" style="width:80%;margin-left:28px;">
     <br>
     <input type="password" class="form-control bg-transparent text-dark btn-outline-dark" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" style="width:80%;margin-left:28px;">
    

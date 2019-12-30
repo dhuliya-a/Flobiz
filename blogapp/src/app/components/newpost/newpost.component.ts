@@ -18,7 +18,7 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@s
   <br>
   <div class="form-group">
     <label for="inputfirst">Description</label>
-    <input type="text" class="form-control" id="inputfist" placeholder="Add a description of the post">
+    <input type="text" class="form-control" id="inputfist" placeholder="Add a description of the blog">
   </div>
   <br>
   <label>Upload Image</label>
@@ -40,18 +40,16 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@s
   <ng-template #valueTemplate>
   <p>Write Away. Mentioned below are some features to help you make the best of this editor.</p>
   <br>
-  <p><b>Key features:</b></p>
-  <ul><li><p>Provides &lt;IFRAME&gt; and &lt;DIV&gt; modes.</p></li>
-  <li><p>Capable of handling markdown editing.</p></li>
-  <li><p>Contains a modular library to load the necessary functionality on demand.</p></li>
-  <li><p>Provides a fully customizable toolbar.</p></li>
-  <li><p>Provides HTML view to edit the source directly for developers.</p></li>
-  <li><p>Supports third-party library integration.</p></li>
-  <li><p>Allows preview of modified content before saving it.</p></li>
-  <li><p>Handles images, hyperlinks, video, hyperlinks, uploads, etc.</p></li>
-  <li><p>Contains undo/redo manager. </p></li>
-  <li><p>Creates bulleted and numbered lists.</p></li>
-  </ul>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    
   </ng-template>
   </ejs-richtexteditor>
   

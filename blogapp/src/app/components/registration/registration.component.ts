@@ -33,17 +33,17 @@ import { ThrowStmt } from '@angular/compiler';
 
 <div class="form-group">
     <label for="inputfirst">First Name</label>
-    <input type="text" class="input" name="firstname" placeholder="First Name" [(ngModel)]="inputfirst">
+    <input type="text" class="input" name="firstname" placeholder="Enter Your First Name" [(ngModel)]="inputfirst">
   </div>
 
 <div class="form-group">
     <label for="inputlast">Last Name</label>
-    <input type="text" class="input" name="lastname" placeholder="Last Name" [(ngModel)]="inputlast">
+    <input type="text" class="input" name="lastname" placeholder="Enter Your Last Name" [(ngModel)]="inputlast">
   </div>
   
 <div class="form-group">
     <label for="inputage">Age</label>
-    <input type="number" class="input" name="age" placeholder="Age" [(ngModel)]="inputage">  
+    <input type="number" class="input" name="age" placeholder="Enter Your Age" [(ngModel)]="inputage">  
   </div>
   
 <div>
@@ -61,19 +61,19 @@ import { ThrowStmt } from '@angular/compiler';
 </div>
 
 <div class="form-group">
-    <label for="inputemail">Email address</label>
-    <input type="email" class="input" name="email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="inputemail">
+    <label for="inputemail">E-mail address</label>
+    <input type="email" class="input" name="email" aria-describedby="emailHelp" placeholder="Enter Your E-mail address" [(ngModel)]="inputemail">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 </div>
 
 <div class="form-group">
     <label for="inputpassword">Password</label>
-    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="inputpassword">
+    <input type="password" class="form-control" name="password" placeholder="Choose a Password" [(ngModel)]="inputpassword">
   </div>
 
 <div class="form-group">
   <label for="inputbio">Bio</label>
-  <input type="text" class="textarea" name="bio" placeholder="Bio" [(ngModel)]="inputbio">
+  <input type="text" class="textarea" name="bio" placeholder="Enter a Bio" [(ngModel)]="inputbio">
 </div>
 
 <br>
