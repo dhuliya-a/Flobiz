@@ -28,17 +28,20 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
+// Serve only the static files form the dist directory
+app.use(express.static(__dirname + '/dist/<name-of-app>'));
+
+app.get('/*', function(req,res) {
+    
+res.sendFile(path.join(__dirname+'/dist/<name-of-app>/index.html'));
+});
+
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:4200"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
   
-
-// define a simple route
-app.get('/', (req, res) => {
-    res.sendFile('A:/flobiz/index.html');
-});
 
 
 // Require Posts routes
@@ -67,6 +70,6 @@ app.use('/user', require('./app/routes/user_routes.js'))
 app.use('/posts/:postId', require('./app/routes/comment_routes.js'))
 
 // listen for requests
-app.listen(3000, () => {
+app.listen(process.env.PORT||8080, () => {
     console.log("Server is listening on port 3000");
 });
