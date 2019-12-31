@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
   <div class="card bg-dark text-white">
    
   <div class="card-img-overlay">
-  <h1 class="display-3 text-white" style="margin-left:570px;margin-top:100px">Channel</h1>
+  <h1 class="display-3 text-white" style="margin-left:565px;margin-top:100px">Channel</h1>
   <h1 class="text-white" style="margin-left:677px;margin-top:0px">Speak Your Mind</h1>  
   </div>
   
