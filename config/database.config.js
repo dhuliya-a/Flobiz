@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://<dbuser>:<dbpassword>@ds143039.mlab.com:43039/heroku_j927d5dp://localhost:27017/flobiz'
+    url: 'mongodb://<heroku_j927d5dp>:<instagram01>@ds143039.mlab.com:43039/heroku_j927d5dp://localhost:27017/flobiz'
 }
