@@ -29,7 +29,7 @@ import { ThrowStmt } from '@angular/compiler';
 </div>
 <div>
 
-<form (ngSubmit)="submitForm()" style="margin-left:40px;width:85%;" >
+<form (ngSubmit)="senduser()" style="margin-left:40px;width:85%;" >
 
 <div class="form-group">
     <label for="inputfirst">First Name</label>
