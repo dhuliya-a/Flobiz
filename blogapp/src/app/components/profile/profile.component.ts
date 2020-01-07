@@ -17,8 +17,8 @@ import { Component, OnInit } from '@angular/core';
   <div  style="margin-right:20px;margin-left:300px">
   
   <img  src="./assets/images/10.jpg" alt="Card image cap">
-  
-  <button type="button" class="btn btn-outline-dark"  style="width:30%;margin-top:20px;margin-left:130px">Change Photo</button><br><br>
+  <button class="button is-outlined is-black"  style="width:30%;margin-top:20px;margin-left:130px">Change Photo</button>
+  <br><br>
 
 </div>
 
